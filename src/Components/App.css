@@ -1,0 +1,29 @@
+.cart-btn{
+    background-color: #8bc34a !important;
+    color: #fff !important;
+    font-size: 11px !important;
+    padding: 6px 15px !important;
+    
+}
+.cart-btns{
+    position: absolute !important;
+    bottom: 1px !important;
+}
+.view-detail-btn{
+    background-color: #fff !important;
+    color: #8bc34a !important;
+    border: 1px solid #8bc34a !important;
+}
+.setBtns{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 6px;
+}
+.checkOutBtn{
+   padding: 10px;
+}
+.checkOutBtn{
+    width: 100%;
+    font-size: 1rem !important;
+}
