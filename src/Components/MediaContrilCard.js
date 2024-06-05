@@ -45,10 +45,10 @@ export default function MediaControlCard({ detail }) {
                     <div style={{ marginTop: '8px', marginBottom: '8px' }}>
                         <Chip label={detail.category} />
                     </div>
-                    <div className='setBtns'>
+                    {/* <div className='setBtns'>
                         <Button className='cart-btn' size="small" style={{ marginTop: '15px' }}>ADD TO CART</Button>
                         <Button className='view-detail-btn ' size="small" style={{ marginTop: '15px' }}>BUY NOW</Button>
-                    </div>
+                    </div> */}
                 </CardContent>
             </Box>
 

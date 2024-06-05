@@ -1,21 +1,27 @@
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from "./Home";
-import { BrowserRouter as Router } from 'react-router-dom'
+import Checkout from './Components/Checkout';
 import CartContext from "./context/cart";
-import { useEffect, useState } from "react";
-import Checkout from './Components/Checkout'
 
 function App() {
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState([]);
+
     useEffect(() => {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        setCart(cart)
-    }, [])
+        setCart(cart);
+    }, []);
+
     return (
-        <Router>
+        <BrowserRouter>
             <CartContext.Provider value={{ cart, setCart }}>
-                <Home />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/checkout" element={<Checkout />} />
+                </Routes>
             </CartContext.Provider>
-        </Router>
-    )
+        </BrowserRouter>
+    );
 }
-export default App
+
+export default App;

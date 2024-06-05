@@ -13,10 +13,10 @@ function Home() {
   const [detail, setDetail] = useState({})
   const [product, setProduct] = useState([])
   const [searchParams, setSearchParams] = useSearchParams();
-    const [productDetail, setProductDetail] = useState()
+  const [productDetail, setProductDetail] = useState()
 
 
-  
+
 
 
 
@@ -48,12 +48,12 @@ function Home() {
   //     })
   //     .catch((err) => console.log(err))
   // }
-    const viewDetails = (product) => {
-      setDetail(product)
-      setOpen(true)
-  }  
- 
-  
+  const viewDetails = (product) => {
+    setDetail(product)
+    setOpen(true)
+  }
+
+
   return (
     <div>
       <DrawerAppBar />
