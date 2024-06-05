@@ -39,7 +39,7 @@ export default function AlignItemsList({ cardData, deleteCart, updateQty }) {
                                             <DeleteOutlineIcon onClick={() => deleteCart(v.id)} style={{ cursor: 'pointer', color: 'red' }} />
                                         </div>
                                         <Typography style={{ fontWeight: 'bold' }}>
-                                            {`Rs ${(v.price * v.qty).toFixed()} -/`}
+                                            {`$${(v.price * v.qty).toFixed()} -/`}
                                         </Typography>
                                         <Typography>
                                             <div style={{ display: 'flex', justifyContent: 'flexstart', alignItems: 'center', gap: '4px' }}>

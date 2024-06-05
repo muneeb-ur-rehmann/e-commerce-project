@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import BasicModal from './Components/BasicModal';
 import { useSearchParams } from 'react-router-dom';
 import { Category } from '@mui/icons-material';
+import Footer from './Components/Footer';
 
 
 function Home() {
@@ -27,6 +28,7 @@ function Home() {
         .then((res) => setProduct(res.data))
         .catch((err) => console.log(err))
     }
+    console.log(product)
   }, [searchParams])
 
   useEffect(() => {
@@ -39,15 +41,6 @@ function Home() {
     console.log(searchParams.get('category'));
   }, [searchParams])
 
-
-  // const viewDetails = (id) => {
-  //   axios(`https://fakestoreapi.com/products/${id}`)
-  //     .then((res) => {
-  //       setDetail(res.data)
-  //       setOpen(true)
-  //     })
-  //     .catch((err) => console.log(err))
-  // }
   const viewDetails = (product) => {
     setDetail(product)
     setOpen(true)
@@ -55,21 +48,24 @@ function Home() {
 
 
   return (
-    <div>
-      <DrawerAppBar />
-      <BasicModal detail={detail} setDetail={setDetail} open={open} handleClose={() => { setOpen(false) }} />
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-around',
-          flexWrap: 'wrap'
-        }}>
-        {product.map((v, i) => {
-          return <MediaCard viewDetails={viewDetails} product={v} key={i}
-          />
-        })}
+    <>
+      <div>
+        <DrawerAppBar />
+        <BasicModal detail={detail} setDetail={setDetail} open={open} handleClose={() => { setOpen(false) }} />
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-around',
+            flexWrap: 'wrap'
+          }}>
+          {product.map((v, i) => {
+            return <MediaCard viewDetails={viewDetails} product={v} key={i}
+            />
+          })}
+        </div>
+        <Footer />
       </div>
-    </div>
+    </>
   );
 }
 

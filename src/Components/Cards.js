@@ -47,7 +47,7 @@ export default function MediaCard({ product, viewDetails }) {
                 </Snackbar>
                 <CardContent>
                     <Typography gutterBottom variant="h6" component="div">
-                        Rs {product.price}
+                       ${product.price}
                     </Typography>
                     <Typography variant="span" color="text.secondary">
                         {product.title.slice(0, 20)}...

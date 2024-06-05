@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from "./Home";
 import Checkout from './Components/Checkout';
 import CartContext from "./context/cart";
+import About from '../src/pages/About'
 
 function App() {
     const [cart, setCart] = useState([]);
@@ -17,6 +18,7 @@ function App() {
             <CartContext.Provider value={{ cart, setCart }}>
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
                     <Route path="/checkout" element={<Checkout />} />
                 </Routes>
             </CartContext.Provider>

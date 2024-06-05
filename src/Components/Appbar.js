@@ -47,7 +47,7 @@ function DrawerAppBar(props) {
 
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        Bachat Bazar
       </Typography>
       <Divider />
       <List>
@@ -101,12 +101,12 @@ function DrawerAppBar(props) {
             <MenuIcon />
           </IconButton>
           <Typography
-            style={{cursor: 'pointer'}}
+            style={{ cursor: 'pointer' }}
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            MHAF Store
+            Bachat Bazar
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
