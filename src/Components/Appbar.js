@@ -89,7 +89,7 @@ function DrawerAppBar(props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar style={{ backgroundColor: '#8bc34a' }} component="nav">
+      <AppBar style={{ backgroundColor: '#884dc2' }} component="nav">
         <Toolbar>
           <IconButton
             color="inherit"
@@ -106,7 +106,7 @@ function DrawerAppBar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            Saylani Store
+            MHAF Store
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (

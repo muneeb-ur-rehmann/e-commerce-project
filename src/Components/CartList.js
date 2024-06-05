@@ -44,16 +44,16 @@ export default function AlignItemsList({ cardData, deleteCart, updateQty }) {
                                         <Typography>
                                             <div style={{ display: 'flex', justifyContent: 'flexstart', alignItems: 'center', gap: '4px' }}>
                                                 QTY:
-                                                <AddIcon onClick={() => updateQty('+', v.id)} style={{ cursor: 'pointer', color: 'green', fontSize: '1rem' }} />
+                                                <AddIcon onClick={() => updateQty('+', v.id)} style={{ cursor: 'pointer', color: '#884dc2', fontSize: '1rem' }} />
                                                 {v.qty}
-                                                <RemoveIcon onClick={() => v.qty > 1 && updateQty('-', v.id)} style={{ cursor: 'pointer', color: 'green', fontSize: '1rem' }} />
+                                                <RemoveIcon onClick={() => v.qty > 1 && updateQty('-', v.id)} style={{ cursor: 'pointer', color: '#884dc2', fontSize: '1rem' }} />
                                             </div>
                                         </Typography>
                                     </React.Fragment>
                                 }
                             />
                         </ListItem>
-                        <Divider style={{ backgroundColor: '#8bc34a', paddingBottom: 0 }} variant="inset" component="li" />
+                        <Divider style={{ backgroundColor: '#884dc2', paddingBottom: 0 }} variant="inset" component="li" />
                     </div>
                 )
             })}

@@ -1,5 +1,5 @@
 .cart-btn{
-    background-color: #8bc34a !important;
+    background-color: #884dc2 !important;
     color: #fff !important;
     font-size: 11px !important;
     padding: 6px 15px !important;
@@ -11,8 +11,8 @@
 }
 .view-detail-btn{
     background-color: #fff !important;
-    color: #8bc34a !important;
-    border: 1px solid #8bc34a !important;
+    color: #884dc2 !important;
+    border: 1px solid #884dc2 !important;
 }
 .setBtns{
     display: flex;

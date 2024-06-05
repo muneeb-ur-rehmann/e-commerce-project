@@ -1,28 +1,34 @@
 import React, { useState } from 'react';
 import { Box, Button, TextField, Typography, Container } from '@mui/material';
+import { db } from '../firebase/firebase'; // Adjust the path according to your project structure
+import { collection, addDoc } from "firebase/firestore";
+import Swal from 'sweetalert2'; // Import sweetalert2
+import { useNavigate } from 'react-router-dom';
 
 const formStyle = {
     backgroundColor: 'transparent',
-    border: '2px solid rgb(139, 195, 74)',
+    border: '2px solid #884dc2',
     padding: '20px',
     borderRadius: '8px',
-    color: '#fff',
-    textAlign: 'center'
+    textAlign: 'center',
 };
 
 const inputStyle = {
-    borderColor: 'rgb(139, 195, 74)',
+    borderColor: '1px solid #884dc2',
     marginBottom: '15px',
 };
 
+const initialFormData = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    address: '',
+    contactNumber: ''
+};
+
 const SubmitForm = () => {
-    const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        address: '',
-        contactNumber: ''
-    });
+    const navigate = useNavigate()
+    const [formData, setFormData] = useState(initialFormData);
 
     const handleChange = (e) => {
         setFormData({
@@ -31,15 +37,35 @@ const SubmitForm = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData);
-        // Add form submission logic here
+        console.log("Submitting form:", formData); // Debugging log
+
+        try {
+            const docRef = await addDoc(collection(db, "details"), formData);
+            console.log("Document written with ID: ", docRef.id); // Debugging log
+            setFormData(initialFormData); // Reset form inputs
+            Swal.fire({
+                title: 'Success!',
+                text: 'Your order has been placed!',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+            navigate('/')
+        } catch (e) {
+            console.error("Error adding document: ", e);
+            Swal.fire({
+                title: 'Error!',
+                text: 'There was an error placing your order. Please try again.',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+        }
     };
 
     return (
-        <Container maxWidth="sm" style={{marginTop:"60px", display:"flex", alignItems:"center", flexDirection: "column"}}>
-            <Typography variant="h4" style={{fontWeight:"bold"}} gutterBottom>
+        <Container maxWidth="sm">
+            <Typography variant="h4" gutterBottom>
                 Submit Order Form
             </Typography>
             <Box sx={formStyle}>
@@ -96,7 +122,7 @@ const SubmitForm = () => {
                         onChange={handleChange}
                         InputProps={{ sx: inputStyle }}
                     />
-                    <Button type="submit" variant="contained" style={{ backgroundColor: 'rgb(139, 195, 74)', marginTop: '15px' }}>
+                    <Button type="submit" variant="contained" style={{ backgroundColor: '#884dc2', marginTop: '15px' }}>
                         Submit Order
                     </Button>
                 </form>
