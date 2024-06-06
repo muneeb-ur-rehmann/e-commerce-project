@@ -1,22 +1,22 @@
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD8mDIQwrzdBA2cVU1lX95C2VAeOCU6muM",
-  authDomain: "hackathone-3cd56.firebaseapp.com",
-  projectId: "hackathone-3cd56",
-  storageBucket: "hackathone-3cd56.appspot.com",
-  messagingSenderId: "962176382131",
-  appId: "1:962176382131:web:36cc05747eb718c6fe6cc6",
-  measurementId: "G-K33GP5JN19"
+  apiKey: "AIzaSyDJd9B1_bNORxUGYH0AHIciuSJZ53UeRLw",
+  authDomain: "e-comerce-website-f8205.firebaseapp.com",
+  projectId: "e-comerce-website-f8205",
+  storageBucket: "e-comerce-website-f8205.appspot.com",
+  messagingSenderId: "184540149280",
+  appId: "1:184540149280:web:e833043d21faa1b898ee45"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const db = getFirestore(app);
-
-
+  
+  
 export { db };
